@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <p class="tag">EMPLOYEE MANAGEMENT</p>
+                <h1>Employee Management System</h1>
+                <p class="subtitle">Manage employee records using JavaScript, Node.js and MySQL.</p>
+            </div>
+            <div class="badge">CRUD</div>
+        </header>
+
+        <section class="card">
+            <h2 id="formTitle">Add Employee</h2>
+            <p class="section-text">Enter employee information.</p>
+
+            <form id="employeeForm">
+                <div class="form-grid">
+
+                    <div class="input-box">
+                        <label for="name">Employee Name</label>
+                        <input type="text" id="name" placeholder="Enter employee name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="department">Department</label>
+                        <input
+                            type="text"
+                            id="department"
+                            list="departmentList"
+                            placeholder="Enter department"
+                            required
+                        >
+
+                        <datalist id="departmentList">
+                            <option value="IT">
+                            <option value="Software Developer">
+                            <option value="Software Engineer">
+                            <option value="Web Developer">
+                            <option value="App Developer">
+                            <option value="Cyber Security">
+                            <option value="Data Analyst">
+                            <option value="Database Administrator">
+                            <option value="HR">
+                            <option value="Finance">
+                            <option value="Marketing">
+                            <option value="Sales">
+                            <option value="Operations">
+                            <option value="Technical Support">
+                            <option value="Quality Assurance">
+                            <option value="UI/UX Design">
+                        </datalist>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="salary">Salary</label>
+                        <input type="number" id="salary" placeholder="Enter salary" required>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" id="submitBtn" class="add-btn">Add Employee</button>
+                    <button type="button" id="cancelBtn" class="cancel-btn" hidden>Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="table-top">
+                <div>
+                    <h2>Employee Records</h2>
+                    <p class="section-text">Records stored in MySQL database.</p>
+                </div>
+
+                <div class="count-box">
+                    <span id="employeeCount">0</span> Employees
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTable"></tbody>
+                </table>
+            </div>
+
+            <div id="emptyMessage" class="empty">No employees found.</div>
+        </section>
+
+        <footer>
+            Employee Management System <span>•</span> Node.js <span>•</span> MySQL
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
